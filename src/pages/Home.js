@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, FormControl, FormControlLabel, FormGroup, FormHelperText, FormLabel, InputLabel, MenuItem, Radio, RadioGroup, Select, TextField } from '@mui/material';
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, FormControl, FormControlLabel, FormGroup, FormHelperText, FormLabel, InputLabel, MenuItem, Radio, RadioGroup, Select, TextField, TextareaAutosize } from '@mui/material';
 import axios from 'axios';
 
 const validationSchema = yup.object({
@@ -99,6 +99,8 @@ const Home = () => {
                             id="address"
                             name="address"
                             label="Address"
+                            multiline
+                            rows={4}
                             value={formik.values.address}
                             onChange={formik.handleChange}
                             error={formik.touched.address && Boolean(formik.errors.address)}
